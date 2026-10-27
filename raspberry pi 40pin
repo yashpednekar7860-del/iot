@@ -1,0 +1,105 @@
+========================================================================================
+                      RASPBERRY PI 40-PIN GPIO HEADER PINOUT
+========================================================================================
+LEFT PINS (ODD)                                 RIGHT PINS (EVEN)
+ALT FUNCTION     NAME / GPIO     PIN     PIN    NAME / GPIO     ALT FUNCTION
+----------------------------------------------------------------------------------------
+                 3.3V Power     [ 1]     [ 2]   5V Power        
+I2C1 SDA         GPIO 2         [ 3]     [ 4]   5V Power        
+I2C1 SCL         GPIO 3         [ 5]     [ 6]   Ground (GND)    
+                 GPIO 4         [ 7]     [ 8]   GPIO 14         UART0 TXD
+                 Ground (GND)   [ 9]     [10]   GPIO 15         UART0 RXD
+                 GPIO 17        [11]     [12]   GPIO 18         
+                 GPIO 27        [13]     [14]   Ground (GND)    
+                 GPIO 22        [15]     [16]   GPIO 23         
+                 3.3V Power     [17]     [18]   GPIO 24         
+SPI0 MOSI        GPIO 10        [19]     [20]   Ground (GND)    
+SPI0 MISO        GPIO 9         [21]     [22]   GPIO 25         
+SPI0 SCLK        GPIO 11        [23]     [24]   GPIO 8          SPI0 CE0 / CS0
+                 Ground (GND)   [25]     [26]   GPIO 7          SPI0 CE1 / CS1
+                 ID_SD (Res.)   [27]     [28]   ID_SC (Res.)    
+                 GPIO 5         [29]     [30]   Ground (GND)    
+                 GPIO 6         [31]     [32]   GPIO 12         
+                 GPIO 13        [33]     [34]   Ground (GND)    
+SPI1 MISO        GPIO 19        [35]     [36]   GPIO 16         SPI1 CE0 / CS0
+                 GPIO 26        [37]     [38]   GPIO 20         SPI1 MOSI
+                 Ground (GND)   [39]     [40]   GPIO 21         SPI1 SCLK
+========================================================================================
+
+========================================================================================
+                      LAB PRACTICALS PIN CONNECTION CHEAT SHEET
+========================================================================================
+
+PRACTICAL 1: LED BLINKING PATTERNS
+----------------------------------------------------------------------------------------
+* LED 1 Anode (+)  --> Physical Pin 7  (GPIO 4)
+* LED 2 Anode (+)  --> Physical Pin 11 (GPIO 17)
+* LED 3 Anode (+)  --> Physical Pin 13 (GPIO 27)
+* LED 4 Anode (+)  --> Physical Pin 15 (GPIO 22)
+* All Cathodes (-) --> Physical Pin 9  (GND) via resistors
+
+PRACTICAL 2: TELEGRAM BOT GPIO CONTROL
+----------------------------------------------------------------------------------------
+* Green LED (+)    --> Physical Pin 3  (GPIO 2)
+* Yellow LED (+)   --> Physical Pin 5  (GPIO 3)
+* Red LED (+)      --> Physical Pin 7  (GPIO 4)
+* Blue LED (+)     --> Physical Pin 11 (GPIO 17)
+* All Cathodes (-) --> Physical Pin 9  (GND) via resistors
+
+PRACTICAL 3: TM1637 4-DIGIT 7-SEGMENT DISPLAY
+----------------------------------------------------------------------------------------
+* VCC              --> Physical Pin 4  (5V)
+* GND              --> Physical Pin 14 (GND)
+* CLK              --> Physical Pin 16 (GPIO 23)
+* DIO              --> Physical Pin 18 (GPIO 24)
+
+PRACTICAL 7: RC522 RFID MODULE (SPI)
+----------------------------------------------------------------------------------------
+* 3.3V             --> Physical Pin 1  (3.3V Power - DO NOT CONNECT TO 5V)
+* GND              --> Physical Pin 6  (GND)
+* RST              --> Physical Pin 22 (GPIO 25)
+* MISO             --> Physical Pin 21 (GPIO 9 / SPI0 MISO)
+* MOSI             --> Physical Pin 19 (GPIO 10 / SPI0 MOSI)
+* SCK              --> Physical Pin 23 (GPIO 11 / SPI0 SCLK)
+* SDA / NSS / CS   --> Physical Pin 24 (GPIO 8 / SPI0 CE0)
+
+PRACTICAL 11: R307 FINGERPRINT + 16x2 I2C LCD
+----------------------------------------------------------------------------------------
+[I2C LCD]
+* VCC              --> Physical Pin 2  (5V)
+* GND              --> Physical Pin 6  (GND)
+* SDA              --> Physical Pin 3  (GPIO 2 / I2C1 SDA)
+* SCL              --> Physical Pin 5  (GPIO 3 / I2C1 SCL)
+[Fingerprint Sensor]
+* VCC (Red)        --> Physical Pin 4  (5V)
+* GND (Black)      --> Physical Pin 9  (GND)
+* TXD (Green)      --> Physical Pin 10 (GPIO 15 / UART RXD)
+* RXD (White)      --> Physical Pin 8  (GPIO 14 / UART TXD)
+
+PRACTICAL 12: FINGERPRINT SENSOR + RELAY (DOOR LOCK)
+----------------------------------------------------------------------------------------
+[Relay Module]
+* VCC              --> Physical Pin 2  (5V)
+* GND              --> Physical Pin 9  (GND)
+* IN               --> Physical Pin 11 (GPIO 17)
+[Fingerprint Sensor]
+* VCC              --> Physical Pin 4  (5V)
+* GND              --> Physical Pin 6  (GND)
+* TXD              --> Physical Pin 10 (GPIO 15 / UART RXD)
+* RXD              --> Physical Pin 8  (GPIO 14 / UART TXD)
+
+PRACTICAL 13: MQTT LED CONTROL
+----------------------------------------------------------------------------------------
+* LED Anode (+)    --> Physical Pin 12 (GPIO 18)
+* LED Cathode (-)  --> Physical Pin 6  (GND) via resistor
+
+PRACTICAL 14: FLASK WEB DASHBOARD RELAY
+----------------------------------------------------------------------------------------
+* Relay VCC        --> Physical Pin 2  (5V)
+* Relay GND        --> Physical Pin 6  (GND)
+* Relay IN         --> Physical Pin 11 (GPIO 17) or Pin 12 (GPIO 18)
+
+PRACTICAL 18: CPU/RAM/TEMP MONITORING
+----------------------------------------------------------------------------------------
+* No external hardware connections required (Internal software metrics).
+========================================================================================
